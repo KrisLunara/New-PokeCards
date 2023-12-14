@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  include mixins/pokeCard
+  h1 Pokemon Card Maker
+  div.card-space
+    each card in cards
+      +pokeCard(card)

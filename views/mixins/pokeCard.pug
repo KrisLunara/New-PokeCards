@@ -1,0 +1,38 @@
+mixin pokeCard(card)
+
+    div(class= `${card.type}`)
+        div.card-header
+            h2=card.name
+            div.img-row
+                h4 HP &#160
+                h2=card.hp
+                img(src=card.typeimg height='25 px')
+        div.card-picture
+            img.card-img(src=card.image height='250')
+        div.card-desc
+            div.attack
+                div.attack-header
+                    div.img-row
+                        -for (let i = 0; i < card.atk1en; i++)
+                            img(src=card.typeimg height='20 px')
+                        -for (let i = 0; i < card.atk1base; i++)
+                            img(src='https://archives.bulbagarden.net/media/upload/thumb/1/1d/Colorless-attack.png/20px-Colorless-attack.png' height='20 px')
+                        h3=card.atk1nm
+                    h3=card.dmg1
+                div.attack-header
+                    div.img-row
+                        -for (let i = 0; i < card.atk2en; i++)
+                            img(src=card.typeimg height='20 px')
+                        -for (let i = 0; i < card.atk2base; i++)
+                            img(src='https://archives.bulbagarden.net/media/upload/thumb/1/1d/Colorless-attack.png/20px-Colorless-attack.png' height='20 px')
+                        h3=card.atk2nm
+                    h3=card.dmg2
+            div.type-adv
+                div.weakness
+                    h5 Weakness
+                    -for (let i = 0; i<card.weakquant; i++)
+                        img(src=card.weak)
+                div.resist
+                    h5 Resistance
+                    -for (let i = 0; i<card.resistquant; i++)
+                        img(src=card.resist)
