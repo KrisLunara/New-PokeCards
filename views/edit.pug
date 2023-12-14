@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    div.form-panel
+        div.header Edit Card
+            form(action= `/edit/${card.id}` method=`post`)
+                div.form-input
+                    label()
