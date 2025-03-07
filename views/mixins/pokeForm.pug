@@ -1,0 +1,31 @@
+mixin pokeForm(card, buttonText, saveUrl, cancelUrl, deleteUrl)
+    form(action=saveUrl method="post")
+        div.input-container
+            label(for="name").form-label Name
+            input(type="text" name="name" id="name" required=true placeholder="Pokemon Name" value=card.name)
+
+        div.input-container
+            label(for="hp").form-label Health Points
+            input(type="hp" name="hp" id="hp" required=true placeholder="Pokemon Name" value=card.name)
+
+        div.input-container
+            label(for='type').form-label Type
+            select(id='type' name='type')
+                each element in ['Colorless','Grass','Fire','Water','Lightning','Fighting','Psychic','Fairy','Darkness','Metal','Dragon']
+                    option(value=element selected = (element === card.type)) #{element}
+
+        div.input-container
+            label(for="image").form-label Image
+            input(type="image" name="image" id="image" required=true placeholder="Image Link" value=card.image)
+
+        div.input-container
+            label(for="atk1nm").form-label Attack 1 Name
+            input(type="text" name="atk1nm" id="atk1nm" required=true placeholder="Attack Name" value=card.atk1nnm)
+
+        div.input-container
+            label(for="body").form-label
+            textarea(name="body" id="body" rows=20 cols=100 placeholder="Here is the lengthy detailed body of my blog") #{article.body}
+
+        a.button(href=cancelUrl) Cancel
+        a.button(href=deleteUrl) Delete
+        button.button.primary(type="submit") #{buttonText}

@@ -76,76 +76,76 @@ a {
   display: flex;
 }
 
-.grass{width: 500px;
+.Grass{width: 500px;
   height: 700px;
   border: 5px solid rgb(45, 161, 57);
   background-color: rgb(184, 222, 198);
   position: relative;
 }
-.fire{
+.Fire{
   width: 500px;
   height: 700px;
   border: 5px solid rgb(176, 45, 30);
   background-color: rgb(235, 188, 183);
   position: relative;
 }
-.water{
+.Water{
   width: 500px;
   height: 700px;
   border: 5px solid rgb(72, 91, 176);
   background-color: rgb(166, 198, 247);
   position: relative;
 }
-.lightning{
+.Lightning{
   width: 500px;
   height: 700px;
   border: 5px solid rgb(227, 212, 52);
   background-color: rgb(232, 228, 186);
   position: relative;
 }
-.fighting{
+.Fighting{
   width: 500px;
   height: 700px;
   border: 5px solid rgb(156, 67, 30);
   background-color: rgb(237, 204, 190);
   position: relative;
 }
-.psychic{
+.Psychic{
   width: 500px;
   height: 700px;
   border: 5px solid rgb(138, 45, 166);
   background-color: rgb(219, 193, 227);
   position: relative;
 }
-.colorless{
+.Colorless{
   width: 500px;
   height: 700px;
   border: 5px solid rgb(91, 92, 97);
   background-color: rgb(211, 213, 222);
   position: relative;
 }
-.darkness{
+.Darkness{
   width: 500px;
   height: 700px;
   border: 5px solid rgb(50, 40, 66);
   background-color: rgb(160, 155, 168);
   position: relative;
 }
-.metal{
+.Metal{
   width: 500px;
   height: 700px;
   border: 5px solid rgb(72, 78, 84);
   background-color: rgb(192, 200, 209);
   position: relative;
 }
-.dragon{
+.Dragon{
   width: 500px;
   height: 700px;
   border: 5px solid rgb(214, 140, 56);
   background-color: rgb(242, 214, 182);
   position: relative;
 }
-.fairy{
+.Fairy{
   width: 500px;
   height: 700px;
   border: 5px solid rgb(184, 51, 133);
