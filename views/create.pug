@@ -1,1 +1,6 @@
 extends layout
+
+block content
+    include mixins/pokeForm
+    div.content
+        +pokeForm(card, 'Create', '/create', '/', null)

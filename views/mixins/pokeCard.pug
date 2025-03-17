@@ -1,6 +1,6 @@
 mixin pokeCard(card)
 
-    div(class= `${card.type}`)
+    div(class= `${card.type}`).card-shape
         div.card-header
             h2=card.name
             div.img-row
@@ -8,7 +8,7 @@ mixin pokeCard(card)
                 h2=card.hp
                 img(src=`/images/TP_${card.type}.png` height='25 px')
         div.card-picture
-            img.card-img(src=card.image height='250')
+            img.card-img(src=card.image height='200')
         div.card-desc
             div.attack
                 div.attack-header
@@ -35,4 +35,8 @@ mixin pokeCard(card)
                 div.resist
                     h5 Resistance
                     -for (let i = 0; i<card.resistquant; i++)
+                        img(src=`/images/TP_${card.resist}.png`)
+                div.retreat
+                    h5 Retreat
+                    -for (let i = 0; i < card.retreatquant; i++)
                         img(src=`/images/TP_${card.resist}.png`)

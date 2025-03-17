@@ -1,48 +1,51 @@
 mixin pokeForm(card, buttonText, saveUrl, cancelUrl, deleteUrl)
     form(action=saveUrl method="post")
-        div.input-container
-            label(for="name").form-label Name
-            input(type="text" name="name" id="name" required=true placeholder="Pokemon Name" value=card.name)
-
-        div.input-container
-            label(for="hp").form-label Health Points
-            input(type="hp" name="hp" id="hp" required=true placeholder="Pokemon Name" value=card.name)
-
-        div.input-container
-            label(for='type').form-label Type
-            select(id='type' name='type')
-                each element in ['Colorless','Grass','Fire','Water','Lightning','Fighting','Psychic','Fairy','Darkness','Metal','Dragon']
-                    option(value=element selected = (element === card.type)) #{element}
-
-        div.input-container
-            label(for="image").form-label Image
-            input(type="image" name="image" id="image" required=true placeholder="Image Link" value=card.image)
-
-        div.input-container
+        div.background
             div.input-container
-                label(for="atk1nm").form-label Attack 1 Name
-                input(type="text" name="atk1nm" id="atk1nm" required=true placeholder="Attack Name" value=card.atk1nm)
+                label(for="name").form-label Name
+                input(type="text" name="name" id="name" required=true placeholder="Pokemon Name" value=card.name)
+
+            div.input-container
+                label(for="hp").form-label Health Points
+                input(type="number" min="10" name="hp" id="hp" required=true placeholder="Pokemon Name" value=card.name)
+
+            div.input-container
+                label(for='type').form-label Type
+                select(id='type' name='type')
+                    each element in ['Colorless','Grass','Fire','Water','Lightning','Fighting','Psychic','Fairy','Darkness','Metal','Dragon']
+                        option(value=element selected = (element === card.type)) #{element}
+
+            div.input-container
+                label(for="image").form-label Image
+                input(type="text" name="image" id="image" required=true placeholder="Image Link" value=card.image)
+
             div.input-container
                 div.input-container
-                    label(for="atk1en").form-label
-                    input(type="number" min="0" name="atk1en" id="atk1en") #{card.atk1en}
-                    div.helper-text Energy cost of your mon type (except Colorless)
+                    label(for="atk1nm").form-label Attack 1 Name
+                    input(type="text" name="atk1nm" id="atk1nm" required=true placeholder="Attack Name" value=card.atk1nm)
                 div.input-container
-                    label(for="atk1base").form-label
-                    input(type="number" min="0" name="atk1base" id="atk1base") #{card.atk1base}
+                    div.input-container
+                        label(for="atk1en").form-label Attack Energy Cost
+                        input(type="number" min="0" name="atk1en" id="atk1en" value=card.atk1en)
+                        div.helper-text Energy cost of your mon type (except Colorless)
+                    div.input-container
+                        label(for="atk1base").form-label Basic Energy Cost
+                        input(type="number" min="0" name="atk1base" id="atk1base" value=card.atk1base)
+                        div.helper-text Colorless type only uses basic energy card
 
-        div.input-container
-            div.input-container
-                label(for="atk2nm").form-label Attack 1 Name
-                input(type="text" name="atk2nm" id="atk2nm" required=true placeholder="Attack Name" value=card.atk2nm)
             div.input-container
                 div.input-container
-                    label(for="atk1en").form-label
-                    input(type="number" min="0" name="atk1en" id="atk2en") #{card.atk2en}
-                    div.helper-text Colorless type only uses basic energy card
+                    label(for="atk2nm").form-label Attack 2 Name
+                    input(type="text" name="atk2nm" id="atk2nm" required=true placeholder="Attack Name" value=card.atk2nm)
                 div.input-container
-                    label(for="atk1base").form-label
-                    input(type="number" min="0" name="atk1base" id="atk2base") #{card.atk2base}
+                    div.input-container
+                        label(for="atk1en").form-label Attack Energy Cost
+                        input(type="number" min="0" name="atk1en" id="atk2en" value=card.atk2en)
+                        div.helper-text Energy cost of your mon type (except Colorless)
+                    div.input-container
+                        label(for="atk1base").form-label Basic Energy Cost
+                        input(type="number" min="0" name="atk1base" id="atk2base" value=card.atk2base)
+                        div.helper-text Colorless type only uses basic energy card
 
         a.button(href=cancelUrl) Cancel
         a.button(href=deleteUrl) Delete
