@@ -30,12 +30,14 @@ mixin pokeCard(card)
             div.type-adv
                 div.weakness
                     h5 Weakness
-                    -for (let i = 0; i<card.weakquant; i++)
-                        img(src=`/images/TP_${card.weak}.png`)
+                    if card.weak !== 'None'
+                        -for (let i = 0; i<card.weakquant; i++)
+                            img(src=`/images/TP_${card.weak}.png`)
                 div.resist
                     h5 Resistance
-                    -for (let i = 0; i<card.resistquant; i++)
-                        img(src=`/images/TP_${card.resist}.png`)
+                    if card.resist !== 'None'
+                        -for (let i = 0; i<card.resistquant; i++)
+                            img(src=`/images/TP_${card.resist}.png`)
                 div.retreat
                     h5 Retreat
                     -for (let i = 0; i < card.retreatquant; i++)

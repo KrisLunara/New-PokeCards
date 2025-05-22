@@ -1,4 +1,6 @@
 const {PokeCards} = require('../models');
+const elements = ['Colorless','Darkness','Dragon','Fairy','Fighting','Fire','Grass','Lightning','Metal','Psychic','Water']
+const elesA = ['None','Darkness','Dragon','Fairy','Fighting','Fire','Grass','Lightning','Metal','Psychic','Water']
 
 module.exports.viewAll = async function(req, res, next) {
     const cards = await PokeCards.findAll();
@@ -9,7 +11,7 @@ module.exports.renderAddForm = function(req, res){
     const card= {
         name: '',
         hp: '',
-        type: '',
+        type: elements[0],
         image: '',
         atk1nm: '',
         atk1en: '',
@@ -19,12 +21,12 @@ module.exports.renderAddForm = function(req, res){
         atk2en: '',
         atk2base: '',
         dmg2: '',
-        weak: '',
+        weak: elesA[0],
         weakquant: '',
-        resist: '',
+        resist: elesA[0],
         resistquant: ''
     };
-    res.render('create', {card});
+    res.render('create', {card, elements, elesA});
 };
 
 module.exports.addNewItem = async function(req, res){
